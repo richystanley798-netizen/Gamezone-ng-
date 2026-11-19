@@ -17,3 +17,14 @@
 const menu=document.getElementById('menu'),nav=document.getElementById('nav');menu.addEventListener('click',()=>nav.classList.toggle('open'));nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));document.getElementById('copyTemplate').addEventListener('click',async()=>{const post='Game: MLBB / Free Fire\nRank: \nRole: \nRegion/server: \nPreferred play time: \nLooking for: friendly teammates';try{await navigator.clipboard.writeText(post);alert('Player post copied! Paste it in your gaming community.')}catch(e){prompt('Copy this player post:',post)}});
 
 </script></body></html>
+
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./service-worker.js")
+      .catch((error) => console.error(
+        "Service worker registration failed:", error
+      ));
+  });
+}
+</script>
